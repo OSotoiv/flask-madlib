@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <h1>Create your own story</h1>
+    <form action="/create" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Story title</label>
+            <input type="text" class="form-control" id="title" name="title">
+        </div>
+        <p>Type your story below. Replace words you would like the user to fill in, with the word type
+            and surround it with curly brackets {}
+        </p>
+        <div class="form-floating mb-3">
+            <textarea name="story" class="form-control" placeholder="write story here" id="floatingTextarea1"
+                style="height: 100px"></textarea>
+            <label for="floatingTextarea1">Write a/an {adjetive} story here</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{%endblock%}

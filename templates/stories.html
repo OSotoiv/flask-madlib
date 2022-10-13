@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content%}
+<h1>choose a story</h1>
+<div class="container">
+    <div class="row">
+        {% for (id,story) in stories.items() %}
+        <div class="card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1630448925000-f014372affc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{story.title}}</h5>
+                <p class="card-text">{{story.num_words}} words</p>
+                <a href="/get_subs/{{id}}" class="btn btn-primary">go</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}
